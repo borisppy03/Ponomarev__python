@@ -1,0 +1,44 @@
+import numpy as np
+import math
+print(np.arange(12, 43))# 1
+
+a = np.zeros(10)
+a[4]=1 # 2
+
+
+v = np.arange(0, 9, 1)# 3
+d = v.reshape((3, 3))
+
+a=np.array([1,2,0,0,4,0]) #4
+bool_idx = (a > 0)
+print(a[bool_idx]) 
+
+a = np.random.random((5,3))#5
+b = np.random.random((3,2))
+r1 = np.dot(a, b)
+
+a = np.full((10,10), 1)#6
+a[1:-1,1:-1] = 0 
+
+
+a = np.random.random(5)#7
+a.sort()
+
+a = np.arange(9).reshape(3, 3)#8
+for index, value in np.ndenumerate(a):
+    print(index, value)
+for index in np.ndindex(a.shape):
+    print(index, a[index])
+    
+a = np.random.randint(1, 9, 10) #9
+summ = math.sqrt(sum(i**2 for i in a))
+a= np.array([i/summ for i in a])
+
+x = float(input())
+a = np.random.randint(-10, 9, 10)#10
+y = min([abs(i - x) for i in a]) 
+print(a)
+if y + x in a: 
+    return y + x
+else:
+    return x - y
