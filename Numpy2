@@ -1,0 +1,11 @@
+import cv2
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+def m(a):
+  return(a * weights)
+img = cv2.imread("pick.jpg")
+print(img.shape)
+weights = np.array([0.299, 0.587, 0.114])
+img2 = np.apply_along_axis(m, 2, img)
+img2 = np.sum(img2, axis=2)
+cv2.imwrite('grey_pick.jpg', img2)
